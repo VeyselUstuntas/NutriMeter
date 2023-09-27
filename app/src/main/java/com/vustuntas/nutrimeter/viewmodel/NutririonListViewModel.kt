@@ -29,7 +29,7 @@ class NutririonListViewModel(application: Application): AndroidViewModel(applica
     private var compositeDisposable =  CompositeDisposable()
     private var privateSharedPreferences:PrivateSharedPreferences = PrivateSharedPreferences(getApplication())
 
-    private var updateTime = 0.10 * 60 * 1000 * 1000 * 1000L
+    private var updateTime = 10 * 60 * 1000 * 1000 * 1000L
 
     private lateinit var job : Job
 
@@ -52,7 +52,7 @@ class NutririonListViewModel(application: Application): AndroidViewModel(applica
                 withContext(Dispatchers.Main){
                     Toast.makeText(getApplication(),"Nutri get Room",Toast.LENGTH_LONG).show()
                 }
-            }
+            }.await()
         }
     }
 
