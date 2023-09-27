@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nutrition_graph"
+    app:startDestination="@id/nutritionList">
+
+    <fragment
+        android:id="@+id/nutritionList"
+        android:name="com.vustuntas.nutrimeter.view.fragment.NutritionList"
+        android:label="NutritionList" >
+        <action
+            android:id="@+id/action_nutritionList_to_nutritionDetail"
+            app:destination="@id/nutritionDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/nutritionDetail"
+        android:name="com.vustuntas.nutrimeter.view.fragment.NutritionDetail"
+        android:label="NutritionDetail" >
+        <action
+            android:id="@+id/action_nutritionDetail_to_nutritionList"
+            app:destination="@id/nutritionList" />
+        <argument
+            android:name="foodId"
+            app:argType="integer" />
+    </fragment>
+</navigation>
